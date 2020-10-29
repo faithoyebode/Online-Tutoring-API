@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 require('dotenv').config();
 exports.login = (req, res) => {
     const errors = validationResult(req);
-        if (!errors.isEmpty()) {
+    if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
     }
     const email = req.query.email;

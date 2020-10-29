@@ -28,7 +28,7 @@ app.use('/v1', allSubjectInCat);
 app.use('/v1', getEachTutor);
 app.use('/v1', updelSubject);
 app.use(notFound);
-mongoose.connect("mongodb+srv://faith:oyetunji123@cluster0-bnqlv.mongodb.net/test?retryWrites=true&w=majority", {dbName: "online-tutor", useNewUrlParser: true, useUnifiedTopology: true}).then((result) => {
+mongoose.connect(process.env.CONN_URL, {dbName: "online-tutor", useNewUrlParser: true, useUnifiedTopology: true}).then((result) => {
 
     console.log("Database Connected");
     app.listen(5000);
